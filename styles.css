@@ -1,0 +1,137 @@
+/* Main Styles */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F9F9F9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navigation */
+
+nav {
+    background-color: #1D3557;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    color: #F9C74F;
+}
+
+.active {
+    color: #F9C74F;
+}
+
+/* Header */
+
+header {
+    background-image: url("https://images.unsplash.com/photo-1521947214562-3e3c860ae8dd");
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.header-content h1 {
+    font-size: 48px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.header-content p {
+    font-size: 24px;
+    margin: 20px 0 0;
+}
+
+/* Main Content */
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.card p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.card a {
+    color: #1D3557;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card a:hover {
+    color: #F9C74F;
+}
+
+/* Footer */
+
+footer {
+    background-color: #1D3557;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Media Queries */
+
+@media (max-width: 991px) {
+    .card {
+        width: 48%;
+    }
+}
+
+@media (max-width: 767px) {
+    .card {
+        width: 100%;
+    }
+}

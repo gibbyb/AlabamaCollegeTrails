@@ -1,25 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alabama Hiking Trails</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-<h1>Alabama Hiking Trails</h1>
+
 <nav>
-    <ul>
-        <li><a href="trails.html">Trails</a></li>
-        <li><a href="events.html">Events</a></li>
+    <div class="logo">
+        <a href="index.html">University Hiking Club</a>
+    </div>
+    <ul class="menu">
+        <li><a href="join.html">How to Join</a></li>
+        <li><a href="locations.html">Where We Hike</a></li>
+        <li><a href="resources.html">Hiking Resources</a></li>
+        <li><a href="calendar.html">Calendar of Events</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
     </ul>
+    <div class="toggle">
+        <i class="fas fa-bars"></i>
+    </div>
 </nav>
-<p>Welcome to the Alabama Hiking Trails club! Our mission is to promote hiking and outdoor activities in Alabama. We organize hikes, camping trips, and other outdoor events for members to enjoy. Whether you're an experienced hiker or new to the outdoors, we welcome you to join us on our adventures.</p>
-<section id="contact">
-    <h2>Contact</h2>
-    <p>You can reach us at:</p>
-    <ul>
-        <li>Email: alabamahikingtrails@example.com</li>
-        <li>Phone: 555-555-5555</li>
-        <li>Address: 123 Main St, Tuscaloosa, AL 35487</li>
-    </ul>
+
+<header>
+    <div class="container">
+        <h1>Welcome to the Alabama Hiking Trails</h1>
+        <p>Discover the beauty of Alabama through our organized hikes and events</p>
+    </div>
+</header>
+
+<section id="about">
+    <div class="container">
+        <div class="content">
+            <h2>About Us</h2>
+            <p>Alabama Hiking Trails is a group of avid hikers who share a passion for exploring the great outdoors. We organize hikes and events throughout Alabama, and welcome hikers of all skill levels to join us on our adventures. Whether you're a seasoned hiker or just starting out, there's a place for you in our community.</p>
+            <a href="join.html" class="btn">Join Us</a>
+        </div>
+        <div class="image">
+            <img src="img/hikers-on-trail.jpg" alt="Hikers on a trail">
+        </div>
+    </div>
 </section>
+
+<section id="featured">
+    <div class="container">
+        <h2>Featured Hikes</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>King's Chair</h3>
+                <img src="img/kings-chair.jpg" alt="King's Chair">
+                <p>Distance: 5 miles</p>
+                <img src="img/kingschairmap.png" alt="King's Chair">
+                <p>Elevation Gain: 1800 ft</p>
+            </div>
+            <div class="card">
+                <img src="images/hike2.jpg" alt="Hiking trail">
+                <h3>Sougahoagdee Falls</h3>
+                <p>Distance: 8 miles</p>
+                <p>Elevation Gain: 1500 ft</p>
+            </div>
+            <div class="card">
+                <img src="images/hike3.jpg" alt="Hiking trail">
+                <h3>Little River Canyon</h3>
+                <p>Distance: 8 miles</p>
+                <p>Elevation Gain: 1200 ft</p>
+            </div>
+        </div>
+        <a href="locations.html" class="btn">View More Hikes</a>
+    </div>
+</section>
+
+<section id="newsletter">
+    <div class="container">
+        <h2>Subscribe to Our Newsletter</h2>
+        <form action="#">
+            <input type="email" placeholder="Enter your email address">
+            <button type="submit" class="btn">Subscribe</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="logo">
+            <a href="index.html">Alabama Hiking Trails</a>
+        </div>
+        <ul class="menu">
+            <li><a href="join.html">How to Join</a></li>
+            <li><a href="locations.html">Where We Hike</a></li>
+            <li><a href="resources.html">Hiking Resources</a></li>
+            <li><a href="calendar.html">Calendar of Events</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <p>&copy; 2023 Alabama Hiking Trails</p>
+    </div>
+</footer>
+
+<script src="https://kit.fontawesome.com/4f8f3b3b62.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
