@@ -1,137 +1,217 @@
-/* Main Styles */
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #F9F9F9;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Navigation */
-
-nav {
-    background-color: #1D3557;
+/* Navbar */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    height: 80px;
 }
 
-nav a {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
+.navbar-brand img {
     margin-left: 20px;
+    margin-bottom: -5px;
+    height: 80px;
 }
 
-nav a:hover {
-    color: #F9C74F;
-}
-
-.active {
-    color: #F9C74F;
-}
-
-/* Header */
-
-header {
-    background-image: url("https://images.unsplash.com/photo-1521947214562-3e3c860ae8dd");
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.header-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #FFFFFF;
-}
-
-.header-content h1 {
-    font-size: 48px;
+.navbar-nav {
+    display: flex;
+    list-style: none;
     margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin: 0 10px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
     font-weight: bold;
+    font-size: 18px;
 }
 
-.header-content p {
-    font-size: 24px;
-    margin: 20px 0 0;
+/* Welcome Section */
+.welcome-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background-color: #f2f2f2;
 }
 
-/* Main Content */
+.welcome-section img {
+    margin-top: 2%;
+    height: 400px;
+}
 
-main {
+.welcome-section h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+/* About Us Section */
+.about-us-section {
+    padding: 50px 0;
+    background-color: white;
+}
+
+.about-us-section h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.about-us-section p {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Featured hikes section */
+.featured-hikes {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.featured-hikes-header {
+    font-size: 48px;
+    margin-top: 90px;
+    margin-bottom: 1%;
+    text-align: center;
+}
+
+.featured-hikes-row {
+    margin-right: 5%;
+    margin-left: 5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 40px;
 }
 
 .card {
-    background-color: #FFFFFF;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    margin-bottom: 20px;
+    max-width: 20%;
+    flex-basis: calc(25% - 20px);
+    width: 25%;
+    margin: 10px;
+    background-color: #444;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.featured-hikes .card {
+    margin: 10px;
+}
+
+.featured-hikes-section .card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.featured-hikes-section .card-body {
+    text-align: center;
 }
 
 .card img {
     width: 100%;
+    height: auto;
+    margin-bottom: 10px;
 }
 
-.card-content {
+.card-body {
+    background-color: white;
     padding: 20px;
 }
 
-.card h2 {
+.card-title {
     font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    background-color: #f2f2f2;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.newsletter-section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.newsletter-section form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-section label {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.newsletter-section input[type="email"] {
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.newsletter-section button {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: forestgreen;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.newsletter-section button:hover {
+    background-color: darkgreen;
+}
+
+.index {
+    padding: 20px;
+    color: white;
+}
+
+.index ul {
+    display: flex;
+    list-style: none;
     margin: 0;
+    padding: 0;
+    justify-content: center;
 }
 
-.card p {
-    font-size: 16px;
-    margin: 10px 0;
+.index li {
+    margin: 0 10px;
 }
 
-.card a {
-    color: #1D3557;
+.index a {
+    color: white;
     text-decoration: none;
     font-weight: bold;
+    font-size: 18px;
 }
 
-.card a:hover {
-    color: #F9C74F;
-}
 
-/* Footer */
-
-footer {
-    background-color: #1D3557;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
-
-/* Media Queries */
-
-@media (max-width: 991px) {
-    .card {
-        width: 48%;
-    }
-}
-
-@media (max-width: 767px) {
-    .card {
-        width: 100%;
-    }
-}

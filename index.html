@@ -1,106 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alabama Hiking Trails</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<nav>
-    <div class="logo">
-        <a href="index.html">Alabama College Trails</a>
-    </div>
-    <ul class="menu">
-        <li><a href="join.html">How to Join</a></li>
-        <li><a href="locations.html">Where We Hike</a></li>
-        <li><a href="resources.html">Hiking Resources</a></li>
-        <li><a href="calendar.html">Calendar of Events</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+<nav class="navbar" style="background-color: forestgreen">
+    <a class="navbar-brand" href="index.html"><img src="/img/temp-logo.png" alt="Alabama College Trails"></a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="join.html">How to Join</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="locations.html">Where We Hike</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="resources.html">Hiking Resources</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="calendar.html">Calendar of Events</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+        </li>
     </ul>
-    <div class="toggle">
-        <i class="fas fa-bars"></i>
-    </div>
 </nav>
 
-<header>
-    <div class="container">
-        <h1>Welcome to the Alabama College Trails</h1>
-        <p>Discover the beauty of Alabama through our organized hikes and events</p>
-    </div>
-</header>
+<div class="welcome-section">
+    <img src="/img/hikers-on-trail.jpg" alt="Happy Hikers on a Trail">
+    <h1>Welcome to Alabama College Trails!</h1>
+</div>
 
-<section id="about">
-    <div class="container">
-        <div class="content">
-            <h2>About Us</h2>
-            <p>Alabama College Trails is a group of avid hikers who share a passion for exploring the great outdoors. We organize hikes and events throughout Alabama, and welcome hikers of all skill levels to join us on our adventures. Whether you're a seasoned hiker or just starting out, there's a place for you in our community.</p>
-            <a href="join.html" class="btn">Join Us</a>
-        </div>
-        <div class="image">
-            <img src="img/hikers-on-trail.jpg" alt="Hikers on a trail">
+<div class="about-us-section">
+    <h2>About Us</h2>
+    <p>Alabama College Trails is a club for outdoor enthusiasts who love to explore the beautiful trails of Alabama. Our members come from all walks of life and all levels of experience, but we share a common love for hiking and the great outdoors. Whether you're a seasoned hiker or just starting out, we welcome you to join us on our adventures!</p>
+</div>
+
+<section class="featured-hikes">
+    <div class="featured-hikes-container">
+         <h1 class="featured-hikes-header">Featured Hikes</h1>
+        <div class="featured-hikes-row">
+            <div class="card">
+                <img src="/img/kings-chair.jpg" alt="Trail 1">
+                <img src="/img/kingschairmap.png" alt="Map 1">
+                <div class="card-body">
+                    <h5 class="card-title">King's Chair</h5>
+                    <p class="card-text">Come and conquer King's Chair, one of the most rewarding hiking trails in Cape Breton Highlands National Park. With its breathtaking panoramic view of the Gulf of St. Lawrence, it's the perfect challenge for adventurous hikers seeking an unforgettable experience</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/img/kings-chair.jpg" alt="Trail 1">
+                <img src="/img/kingschairmap.png" alt="Map 1">
+                <div class="card-body">
+                    <h5 class="card-title">King's Chair</h5>
+                    <p class="card-text">Come and conquer King's Chair, one of the most rewarding hiking trails in Cape Breton Highlands National Park. With its breathtaking panoramic view of the Gulf of St. Lawrence, it's the perfect challenge for adventurous hikers seeking an unforgettable experience</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/img/kings-chair.jpg" alt="Trail 1">
+                <img src="/img/kingschairmap.png" alt="Map 1">
+                <div class="card-body">
+                    <h5 class="card-title">King's Chair</h5>
+                    <p class="card-text">Come and conquer King's Chair, one of the most rewarding hiking trails in Cape Breton Highlands National Park. With its breathtaking panoramic view of the Gulf of St. Lawrence, it's the perfect challenge for adventurous hikers seeking an unforgettable experience</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/img/kings-chair.jpg" alt="Trail 1">
+                <img src="/img/kingschairmap.png" alt="Map 1">
+                <div class="card-body">
+                    <h5 class="card-title">King's Chair</h5>
+                    <p class="card-text">Come and conquer King's Chair, one of the most rewarding hiking trails in Cape Breton Highlands National Park. With its breathtaking panoramic view of the Gulf of St. Lawrence, it's the perfect challenge for adventurous hikers seeking an unforgettable experience</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<section id="featured">
-    <div class="container">
-        <h2>Featured Hikes</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>King's Chair</h3>
-                <img src="img/kings-chair.jpg" alt="King's Chair">
-                <p>Distance: 5 miles</p>
-                <img src="img/kingschairmap.png" alt="King's Chair">
-                <p>Elevation Gain: 1800 ft</p>
-            </div>
-            <div class="card">
-                <img src="images/hike2.jpg" alt="Hiking trail">
-                <h3>Sougahoagdee Falls</h3>
-                <p>Distance: 8 miles</p>
-                <p>Elevation Gain: 1500 ft</p>
-            </div>
-            <div class="card">
-                <img src="images/hike3.jpg" alt="Hiking trail">
-                <h3>Little River Canyon</h3>
-                <p>Distance: 8 miles</p>
-                <p>Elevation Gain: 1200 ft</p>
-            </div>
-        </div>
-        <a href="locations.html" class="btn">View More Hikes</a>
-    </div>
-</section>
+<div class="newsletter-section">
+    <h2>Subscribe to Our Newsletter</h2>
+    <form>
+        <label for="email">Enter your email address:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+</div>
 
-<section id="newsletter">
-    <div class="container">
-        <h2>Subscribe to Our Newsletter</h2>
-        <form action="#">
-            <input type="email" placeholder="Enter your email address">
-            <button type="submit" class="btn">Subscribe</button>
-        </form>
-    </div>
-</section>
-
-<footer>
-    <div class="container">
-        <div class="logo">
-            <a href="index.html">Alabama College Trails</a>
-        </div>
-        <ul class="menu">
-            <li><a href="join.html">How to Join</a></li>
-            <li><a href="locations.html">Where We Hike</a></li>
-            <li><a href="resources.html">Hiking Resources</a></li>
-            <li><a href="calendar.html">Calendar of Events</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-        <p>&copy; 2023 Alabama College Trails</p>
-    </div>
+<footer class="index" style="background-color: forestgreen">
+    <ul>
+        <li><a href="#">How to Join</a></li>
+        <li><a href="#">Where We Hike</a></li>
+        <li><a href="#">Hiking Resources</a></li>
+        <li><a href="#">Calendar of Events</a></li>
+        <li><a href="#">Join Us</a></li>
+    </ul>
 </footer>
-
-<script src="https://kit.fontawesome.com/4f8f3b3b62.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
+
