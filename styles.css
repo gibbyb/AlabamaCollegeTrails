@@ -1,36 +1,160 @@
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
+/*
+Name: Alabama Hiking Trails - group project ITC 400
+Theme URI: https://www.alabamahikingtrails.GulfCoastWebsites.com/
+Author(s): Ralph Harris,
+Author URI(s): http://rahaprogramming.com/, 
+Description: Custom site made with ♡ 
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: alabamahikingtrails
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, hiking, trails, university hiking
+This site is licensed under the GPL.
+PLEASE ENTER YOUR INFORMATION ABOVE IF YOU ARE WORKING ON THIS PROJECT.
+*/
+
+/* colors */
+/* to override variables for bootstrap see - https://getbootstrap.com/docs/5.3/customize/options/ */
+:root {
+    --primary: #233d1d;/*dark green*/
+    --secondary: #AF002A;/*bright red for Alabama!*/
+    --secondary-hover: rgba(175, 0, 42, .8);/*80% red alabama*/
+    --text-primary: rgba(255, 255, 255, 0.7);/*70% white*/
+    --text-secondary: rgba(0, 0, 0, 0.7);/*70% black*/
+    --red: #e35248;
+    --dark: #163e60;
+    --cream: #efeac8;
+    --silver:#dbdcd5;
+    --black:  #2f2f35;
+    --bs-navbar-active-color:white;/*for bootstrap navbar*/
+    --transparent-primary: rgba(35, 61, 29, .7);
+    --transparent: rgba(0,0,0,0);
+}
+/* general */
+body,html {
+    font-family: var(--font-default);
+    color: var(--text-primary);
+}
+body {
+    -webkit-text-size-adjust: none;
+}
+a {
+  color: var(--text-primary);
+  text-decoration: none!important;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+a:hover {
+  color: var(--secondary-hover);
+  text-decoration: none;
+  font-size: 1.01rem;
+}
+h1,h2,h3,h4,h5,h6,p {
+    color: #1b2f45;
+    font-family: var(--font-primary);
+}
+h2{/*scales a little better*/
+    font-size: calc(1.325rem + 1.5vw);
+}
+@media screen and (min-width: 240px) and (max-width: 1169px){body {-webkit-text-size-adjust: none;}}
+abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+    font-weight: 400;
+    pointer-events: auto;
+}
+/*--------------------------------------------------------------
+# Sections & Section Header
+--------------------------------------------------------------*/
+section {
+  overflow: hidden;
+  padding: 0 0;
+}
+.section-header {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.section-header h1,.section-header h2,.section-header h3,.section-header h4,.section-header h5,.section-header h6{
+    font-weight: 600!important;
+  }
+.section-header h2 {
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.section-header p {
+  margin-bottom: 0;
+}
+/*--------------------------------------------------------------
+# Scroll top button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background: var(--secondary);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
 }
 
-.navbar-brand img {
-    margin-left: 20px;
-    margin-bottom: -5px;
-    height: 80px;
+.scroll-top i {
+  font-size: 24px;
+  color: #fff;
+  line-height: 0;
 }
 
-.navbar-nav {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.scroll-top:hover {
+  background: var(--secondary-hover);
+  color: #fff;
 }
 
-.nav-item {
-    margin: 0 10px;
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
 }
-
-.nav-link {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0s !important;
+  }
 }
+#preloader{
+    position:fixed;
+    z-index:10;
+    height: 100vh;
+    width: 100vw;
+    overflow:hidden;
+    background:#fff;
+    transition:all 0.6s ease-out;
+}
+#preloader:before{
+    content:"";
+    position:fixed;
+    top:calc(50% - 30px);
+    left:calc(50% - 30px);
+    border:6px solid var(--secondary);
+    border-top-color: transparent;
+    border-radius:50%;
+    width:60px;height:60px;-webkit-animation:animate-preloader 1s linear infinite;
+    animation:animate-preloader 1s linear infinite;
+}
+@-webkit-keyframes animate-preloader{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@keyframes animate-preloader{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}   
 
-/* Welcome Section */
+/***************************************************************************
+-   Welcome Section
+***************************************************************************/
 .welcome-section {
     display: flex;
     flex-direction: column;
@@ -39,9 +163,8 @@
     height: 500px;
     background-color: #f2f2f2;
 }
-
 .welcome-section img {
-    margin-top: 2%;
+    margin-top: 15%;
     height: 400px;
 }
 
