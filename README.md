@@ -1,4 +1,5 @@
 Alabama Trails School project
+live site: https://alabamacollegetrails.gulfcoastwebsites.com
 Project Team:
 
 Gabriel Brown - Hope Bullock - Ralph Harris - Bryan Hutchinson - Patrick Moran - Christian Patton - Kassidy Reynolds - Rodney Richards
