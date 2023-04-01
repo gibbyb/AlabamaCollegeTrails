@@ -1,8 +1,7 @@
 Alabama Trails School project
 Project Team:
-Gabriel Brown
 
-Hope Bullock - Ralph Harris - Bryan Hutchinson - Patrick Moran - Christian Patton - Kassidy Reynolds - Rodney Richards
+Gabriel Brown - Hope Bullock - Ralph Harris - Bryan Hutchinson - Patrick Moran - Christian Patton - Kassidy Reynolds - Rodney Richards
 
 Overview
 The project team will create a website for the fictitious University Hiking Club that offers information about hiking in Alabama.  The website for the University Hiking Club should be created using free tools. Each team member should be assigned a role, and team members can have more than one role.  Each team should have a project manager, and the project manager should have an additional role in the team.  Each team member will be graded individually, so it is important that the contribution of each team member is obvious.
