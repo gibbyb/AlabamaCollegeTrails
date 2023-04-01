@@ -62,58 +62,66 @@ class Database{
     */
     function createTables()
     {
-        //$this->dropTable("orders");
-        $this->createSettings();
+        //$this->dropTable("alabama_trails_events");
+        $this->createEvents();
         return true;
     }   
     /**
-    * Create table quick_cart_settings
+    * Create table createEvents
     *@return bool success/fail
     */
-    function createSettings(){
+    function createEvents(){
         $pdo = $this->pdo;
         try {
-            $sql = "CREATE TABLE IF NOT EXISTS quick_cart_settings (
+            $sql = "CREATE TABLE IF NOT EXISTS alabama_trails_events (
                 id int(10) AUTO_INCREMENT PRIMARY KEY,
-                paypal_client_id varchar(255) DEFAULT 'sb',
-                currency varchar(10) DEFAULT 'USD',
-                nonce varchar(255) DEFAULT '',
-                paypal smallint(1) DEFAULT 1,
-                braintree smallint(1) DEFAULT 0,
-                reviews_logged_in smallint(1) DEFAULT 0,
-                reviews_approve smallint(1) DEFAULT 0,
-                show_reviews smallint(1) DEFAULT 1,
-                braintree_enviroment varchar(20) DEFAULT 'sandbox',
-                paypal_enviroment varchar(20) DEFAULT 'sandbox',
-                braintree_merchant_id varchar(255) DEFAULT '',
-                braintree_public_key varchar(255) DEFAULT '',
-                braintree_private_key varchar(255) DEFAULT '',
-                clientToken varchar(255) DEFAULT '',
-                woo_enabled  smallint(1) DEFAULT 0
+                title varchar(255) DEFAULT '',
+                groupId varchar(255) DEFAULT '',
+                url varchar(255) DEFAULT '',
+                address varchar(255) DEFAULT '',
+                start varchar(50) DEFAULT '',
+                end varchar(50) DEFAULT '',
+                date_created varchar(50),
+                notes varchar(255) DEFAULT ''
                 )";
             $pdo->exec($sql);
             return true;
         }
         catch(PDOException $e){
-                $this->msg = 'error creating quickcart settings: '.$e->getMessage();
+                $this->msg = 'error creating events table: '.$e->getMessage();
                 return false;
         }
     }
+    
+     /**
+     * @return bool
+     */
+    function setEvent($group, $title, $url, $address, $start, $end, $notes){
+        $date = new DateTime("now");
+        $date_created = $date->format('Y-m-d H:i:s');
+        $pdo = $this->pdo;//connection            
+        $stmt = $pdo->prepare('Insert INTO alabama_trails_events (groupId, title, url, address, start, end, date_created, notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');//statement
+        if($stmt->execute([$group, $title, $url, $address, $start, $end, $date_created, $notes])){//execute - success
+            return true;
+        }else{//execute - failure
+            $this->msg = 'Failed creating event.';//set error
+            return false;//you loose
+        }        
+    }
     /**
-    * @return int - return 1 for ready 
+    * @return array - array of events 
     */
-   function getBraintree(){
+   function getEvents(){
        $pdo = $this->pdo;//connect
-       if(is_null($pdo)){
+       if(!isset($pdo)){
            $this->msg = 'Connection Error!';
            return null;
        }else{
-           $stmt = $pdo->prepare('SELECT braintree FROM quick_cart_settings WHERE id = 777');
+           $stmt = $pdo->prepare('SELECT * FROM alabama_trails_events');
            if($stmt->execute()){
-               $braintree = ($stmt->fetch());
-               return $braintree['braintree'];
+               return $stmt->fetchAll();
            }else{
-               $this->msg = 'Error getting paypal_client_id';//set error
+               $this->msg = 'unknown error getting events';//set error
                return null; 
            }
        }
@@ -185,28 +193,28 @@ class Database{
         }));
       }
     
+    /**
+    * @param string - table to drop
+    *@return bool success/fail
+    */
+    function dropTable($table){
+        try {
+            $pdo = $this->pdo;
+            $sql = "DROP TABLE ".$table;
+            $pdo->exec($sql);
+            return;
+        }
+        catch(PDOException $e)
+        {
+                return $e->getMessage();
+        }
+    }
     /* for passing the pdo instance to other classes
      * @return pdo
      */
     function getPdo () {
         return $this->pdo;
       }
-    /**
-	* @param string - table to drop
-	*@return bool success/fail
-	*/
-	function dropTable($table){
-            try {
-                $pdo = $this->pdo;
-                $sql = "DROP TABLE ".$table;
-                $pdo->exec($sql);
-                return;
-            }
-            catch(PDOException $e)
-            {
-                    return $e->getMessage();
-            }
-        }
 }
 
 session_write_close();
