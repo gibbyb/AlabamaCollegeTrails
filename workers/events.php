@@ -44,14 +44,42 @@ if(isset($_POST) && isset($_POST['postType'])){
         $notes = filter_var($_POST['notes'], FILTER_SANITIZE_STRING);
         if($database->setEvent($group, $title, $url, $address, $dateStart, $dateEnd, $notes))
         {
-            die(print(json_encode(array('error'=> 0, 'msg' => "Successfully added event! ".$dateStart))));
+            die(print(json_encode(array('error'=> 0, 'msg' => "Successfully registered for event! "))));
         }else{
-            die(print(json_encode(array('error'=> 1, 'msg' => "<p class='alert alert-danger'>"+$database->printError()+"</p>"))));
+            die(print(json_encode(array('error'=> 1, 'msg' => $database->printError() ))));
         }
-    }else if($_POST['postType'] === 'getEvents'){
+    }else if($_POST['postType'] === 'regEvents'){
+        $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
+        $address = filter_var($_POST['address'], FILTER_SANITIZE_STRING);
+        $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
+        $time = filter_var($_POST['start'], FILTER_SANITIZE_STRING);
+
+        $subject = "RSVP for event ".$title;
+
+        //email body
+        $message_body = "RSVP for event ".$title."\r\nLocation: ".$address."\r\nTime: ".$time;
+        $message_body .= "\r\n\r\nRegistrant Email:\r\n".$email;
+
+        // In case any of our lines are larger than 70 characters, we should use wordwrap()
+        $message_final = wordwrap($message_body, 70, "\r\n");
+
+        // compose headers
+        $headers = "From: ".$email."\r\n";
+        $headers .= "Reply-To: $email\r\n";
+        $headers .= "X-Mailer: PHP/".phpversion();
+
+        mail('rahaprogramming@gmail.com', $subject, $message_final, $headers);
+        $send_mail = mail('UnivHikingUSM@gmail.com', $subject, $message_final, $headers);
+
+        if($send_mail){
+            die(print(json_encode(array('error'=> 0, 'msg' => "Thank you for registering for this event!"))));
+        }else{
+            die(print(json_encode(array('error'=> 1, 'msg' => "Error registering for event"))));
+        }
+    }
+    else if($_POST['postType'] === 'getEvents'){
         $events = $database->getEvents();
-        if($events )
-        {
+        if( $events ){
             die(print(json_encode(array('error'=> 0, 'msg' => "Successfully retrieved events!", 'events'=>$events))));
         }else{
             die(print(json_encode(array('error'=> 1, 'msg' => "<p class='alert alert-danger'>"+$database->printError()+"</p>"))));
