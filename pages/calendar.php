@@ -19,10 +19,12 @@ $events = $database->getEvents();
         </div>
     </div>
 </section>
+<!-- see calendar.io for details - initialized in javascript (js/calendar.js) -->
 <section id="calendar" class="mb-3"></section>
 <section>
     <h5 id="export" class="align-items-center centered mb-5 clickable">Download events: <i class="bi bi-cloud-download fs-xxl"></i></h5>
 </section>
+<!-- RSVP section popup - d-none by default -->
 <section id="rsvp" class="d-none">
     <div class="overlay-dark active">
     </div>
@@ -70,6 +72,7 @@ $events = $database->getEvents();
         </div>
     </div>
 </section>
+<!-- Add Event section popup - d-none by default -->
 <section id="addEvent" class="d-none">
     <div class="overlay-dark active">
     </div>
