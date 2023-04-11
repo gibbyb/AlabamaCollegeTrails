@@ -337,4 +337,41 @@ section {
     font-size: 18px;
 }
 
+/***************************************************************************
+-   Locations Section
+***************************************************************************/
+#trails-vh {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
 
+#trails-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 650px;
+    flex-wrap: wrap;
+    column-gap: 1em;
+    row-gap: 1em;
+}
+
+.trail-section {
+    display: flex;
+    width: 15em;
+    height: 20em;
+    background-color: #447638;
+    border: 1px solid #233d1d;
+    padding: 1em;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.trail-header {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    /* border-bottom: 1px solid #7eb56a; */
+}

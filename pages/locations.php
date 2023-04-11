@@ -1,28 +1,24 @@
+<?php 
+  $trails_file = file_get_contents('./js/locations.json');
+  $trails = json_decode($trails_file, true);
+?>
 
 <h1>Featured Trails</h1>
-<table>
-  <thead>
-  <tr>
-    <th>Trail Name</th>
-    <th>Length</th>
-    <th>Description</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>Trail 1</td>
-    <td>3 miles</td>
-    <td>A scenic trail with moderate difficulty</td>
-  </tr>
-  <tr>
-    <td>Trail 2</td>
-    <td>5 miles</td>
-    <td>A challenging trail with steep inclines and rocky terrain</td>
-  </tr>
-  <tr>
-    <td>Trail 3</td>
-    <td>2 miles</td>
-    <td>A family-friendly trail with easy terrain and beautiful views</td>
-  </tr>
-  </tbody>
-</table>
+<div id="trails-vh">
+  <div id="trails-container">
+    <?php
+      foreach($trails as $key => $trail){
+    ?>
+      
+      <a href="<?php echo $trail['url'] ?>">
+        <div class='trail-section' style='background-image: url("<?php echo $trail['image'] ?>");'>
+          <h1 class='trail-header'>
+              <?php echo $key ?>
+          </h1>
+        </div>
+      </a>
+    <?php
+      }
+    ?>
+  </div>
+</div>
