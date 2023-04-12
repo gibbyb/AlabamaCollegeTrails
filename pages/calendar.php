@@ -4,37 +4,24 @@ include('../config.php');//get DB connection
 require_once(__DIR__.'/../classes/Database.php');//mostly for DB connections... mostly...
 //initialize classes
 if(!isset($database)){$database = new Database();}//initialize database
-$events = $database->getEvents();
+//events{title:"",url:"",address:"",start:"DateString",end:"DateString"}
+$events = $database->getEvents();//if needed
 ?>
-<section class="parrallax" id="calendar-hero d-flex align-items-center" style="background-image: url(../img/events-hero.jpg)">
-    <div class="bg-block"></div>
-    <div class="container container-header mt-5">
-        <div class="row">
-            <div class="col-xxl-4">
-                <h1 data-aos="fade-up" class="h1 aos-init aos-animate text-white ">Upcoming Events<span class="cursive">.</span></h1>
-                <h2 data-aos="fade-up" class="h2 aos-init aos-animate text-white ">Hiking<span class="cursive">,</span> School<span class="cursive">,</span> or Community Events
-                    <span class="cursive">.</span></h2>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- see calendar.io for details - initialized in javascript (js/calendar.js) -->
-<section id="calendar" class="mb-3"></section>
+<section id="calendar" class="mb-3"></section><!--Calendar.io-->
 <section>
     <h5 id="export" class="align-items-center centered mb-5 clickable">Download events: <i class="bi bi-cloud-download fs-xxl"></i></h5>
 </section>
-<!-- RSVP section popup - d-none by default -->
 <section id="rsvp" class="d-none">
     <div class="overlay-dark active">
     </div>
-    <div class="mx-auto my-auto bg-white border-block center-horizontal center-vertical event-box bg-grey">
+    <div class="mx-auto my-auto bg-white border-block center-horizontal center-vertical event-box bg-grey p-3 box-float">
         <div class="col-12 d-flex justify-content-end me-5 login-container">
             <i class="bi bi-x me-3 text-black ts-xxl" id="event-close"></i>
         </div>
-        <div class="container p-5 pt-0">
+        <div class="container p-2 pt-0">
             <div class="row">
-                <div class="col-12 text-center">
-                    <h4 id="title-rsvp" class="h4 border-highlight mb-5">Event</h4>
+                <div class="col-12 d-flex justify-content-center">
+                    <h4 id="title-rsvp" class="h4 border-highlight mb-5 title-popup">Event</h4>
                 </div>
                 <div class="col-6 mb-2">
                     <p class="event">Event URL (if applicable): </p>
@@ -71,18 +58,17 @@ $events = $database->getEvents();
         </div>
     </div>
 </section>
-<!-- Add Event section popup - d-none by default -->
 <section id="addEvent" class="d-none">
     <div class="overlay-dark active">
     </div>
-    <div class="mx-auto my-auto bg-white border-block center-horizontal center-vertical event-box bg-grey">
+    <div class="mx-auto my-auto bg-white border-block center-horizontal center-vertical event-box bg-grey p-3 box-float">
         <div class="col-12 d-flex justify-content-end me-5 login-container">
             <i class="bi bi-x me-3 text-black ts-xxl" id="event-close"></i>
         </div>
-        <div class="container p-5 pt-0">
+        <div class="container p-2 pt-0">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h4 class="h4 border-highlight mb-5">Add Event</h4>
+                    <h4 class="h4 border-highlight mb-5 title-popup">Add Event</h4>
                 </div>
                 <div class="col-12 mb-2">
                     <label for="event_title">Event Title*</label>

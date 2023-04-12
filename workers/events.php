@@ -38,7 +38,6 @@ if(isset($_POST) && isset($_POST['postType'])){
         $date->setTime($start, 0);
         $dateStart = $date->format('Y-m-d H:i:s');
         $date->setTime($end, 0);
-        //$dateStart = $year."-".$month."-".$day." ".$start.":00:00";
         $dateEnd = $date->format('Y-m-d H:i:s');
         
         $notes = filter_var($_POST['notes'], FILTER_SANITIZE_STRING);
@@ -60,7 +59,7 @@ if(isset($_POST) && isset($_POST['postType'])){
         $message_body = "RSVP for event ".$title."\r\nLocation: ".$address."\r\nTime: ".$time;
         $message_body .= "\r\n\r\nRegistrant Email:\r\n".$email;
 
-        // In case any of our lines are larger than 70 characters, we should use wordwrap()
+        // In case any of our lines are larger than 70 characters
         $message_final = wordwrap($message_body, 70, "\r\n");
 
         // compose headers
