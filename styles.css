@@ -185,6 +185,27 @@ section {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.join-section input[type="text"] {
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.join-section form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.join-section label {
+    text-align:center;
+    font-size: 18px;
+    margin-right: 10px;
+}
 
 .welcome-section {
     display: flex;
