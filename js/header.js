@@ -1,29 +1,28 @@
-
 /* global AOS */
 document.addEventListener('DOMContentLoaded', () => {
       "use strict";
     //preloader
-    $(window).on('load',function() {
-        $('#preloader').css('background-color','transparent');
-        $('#preloader').fadeOut('fast');
-    });
+    setTimeout(function(){//wait a second, there! - make sure everything has loaded (on client)
+        $('#preloader').css('background-color','transparent');//looks better
+        $('#preloader').fadeOut('slow');//hide spinner
+    },1000);//1 second
     
     //Sticky header on scroll
     const selectHeader = document.querySelector('#header');
-    if(selectHeader){
+    if(selectHeader){//if exists
     document.addEventListener('scroll', () => {
-        adjustHeader();
+        adjustHeader();//this was from an old project - it's a bit messy
     });
     adjustHeader();
-    function adjustHeader(){
-        if(window.scrollY > 250){
+    function adjustHeader(){//show sticky header - TODO: remove unneeded classes
+        if(window.scrollY > 250){//scroll 250 px
                 selectHeader.classList.add('sticked');
                 selectHeader.classList.add('fixed-top');
                 selectHeader.classList.add('align-items-center');
                 selectHeader.classList.add('d-flex');
                 selectHeader.classList.add('d-shrunk');
                 selectHeader.classList.remove('position-absolute');
-        }else if(window.scrollY < 100){
+        }else if(window.scrollY < 100){//scroll 100 px
             selectHeader.classList.remove('sticked');
             selectHeader.classList.remove('fixed-top');
             selectHeader.classList.remove('align-items-center');
@@ -61,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
      * Toggle mobile nav dropdowns
      */
     const navDropdowns = document.querySelectorAll('.navbar .dropdown > a');
-
     navDropdowns.forEach(el => {
       el.addEventListener('click', function(event) {
         if (document.querySelector('.mobile-nav-active')) {
@@ -76,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    //scroll to section functionality
+    //scroll to section functionality - usage: <a href="#IDtoscrollto">link</a>
     $("a[href^='#']").click(function(e) {
         e.preventDefault();
         if($(this).attr("href").length > 1){
@@ -106,6 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
           scroll(0);
       });
     }
+    //scrolls to position (int)
+    //@param int position - number in px to scroll from top of document
     function scroll(position){
         window.scrollTo({
             top: position,

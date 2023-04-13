@@ -8,13 +8,13 @@ function initializeCalendar(){
      $.post('../workers/events.php',{'postType':'getEvents'},function(result){
         //console.log(result);
         if(result.length){//if there are events
-            result = JSON.parse(result);
-            var title = result.title,
+            result = JSON.parse(result);//make JSON object
+            var title = result.title,//get variables in return data
                 url = result.url,
                 start = result.start,
                 end = result.end,
                 address = result.address;
-            calendarEvents = result.events;
+            calendarEvents = result.events;//the events as JSON array
             calendar = new FullCalendar.Calendar(calendarEl, {timeZone: 'UTC',initialView: 'dayGridMonth',
             headerToolbar: {left: 'prev,next today', center: 'title', right: 'dayGridMonth,timeGridWeek,timeGridDay'},
             dateClick: function(info) { addEvent(info); },// load popup
@@ -22,9 +22,9 @@ function initializeCalendar(){
                 info.jsEvent.preventDefault();//disable go to url by default
                 rsvp(info); //load popup
             },
-            events: calendarEvents
+            events: calendarEvents//load events
             });
-            calendar.render();
+            calendar.render();//render calendar
         }
     });
 }
@@ -96,7 +96,7 @@ setTimeout(function(){//wait for events[] GET request to process
         });
         calendar.render();
     }
-},800);//800ms should be enough 95% of the time
+},1000);//1 full second should be enough 95% of the time
 $('#btn-rsvp').on('click',function(event){//RSVP btn
     var email = $('#email-rsvp').val();//get email address
     if(isEmail(email)){//if valid email

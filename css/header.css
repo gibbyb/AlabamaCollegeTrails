@@ -35,7 +35,7 @@
 }
 .logo-txt-sm{
     line-height: 15px;
-    font-size: 13px;
+    font-size: 12px;
     margin-bottom: 0px;
     margin-top: 0px;
     text-decoration: none;
@@ -70,6 +70,7 @@ nav .social-links {
   transition: all 0.5s;
   z-index: 9;
   padding: 24px 0;
+  top: 0;
 }
 
 @media (max-width: 1200px) {
@@ -402,6 +403,95 @@ nav .social-links {
       z-index: 6;
     }
 }
+/**************************************
+            login
+**************************************/
+.overlay-dark{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.3);
+    transition: background-color .5s ease-in-out;
+    position: fixed;
+    top:0;
+}
+#login{
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    position: fixed;
+    z-index: 9;
+}
+#result{
+    height: 50px;
+}
+.login-box{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    border-radius: 5px;
+}
+#login-close:hover{
+    cursor: pointer !important;
+}
+#login-close::before:hover{
+    cursor: pointer !important;
+}
+.checkout_input {
+    width: 100%;
+    height: 52px;
+    background: #f2f4f8;
+    border: none;
+    outline: none;
+    padding-left: 15px;
+}
+.border-underline:before{
+        content: "";
+    position: absolute;
+    display: block;
+    background: #ff7801;
+    background-image: initial;
+    content: '';
+    display: block;
+    height: 5px;
+    position: absolute;
+    left: 30%;
+    right: 0;
+    z-index: -1;
+    box-shadow: 5px 3px 2px 1px rgb(0 0 0 / 20%);
+    width: 200px;
+    top: 75px;
+}
+.btn-orange{
+    background-color: var(--secondary);
+    color: white;
+}
+
+.border-highlight:before{
+    top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50vw;
+    max-width: 300px;
+}
+.btn-outline-red::before{
+    border-bottom: 1px solid #e74c3c ;
+    border-left: 1px solid #e74c3c ;
+}
+.btn-outline-red::after{
+    border-top: 1px solid #e74c3c ;
+    border-right: 1px solid #e74c3c ;
+}
+#login{
+    position: fixed;
+    opacity: 1;
+    z-index: 99;
+}
+/**********************************************
+end login
+**********************************************/
 /**************************************
             js dependent css
 **************************************/

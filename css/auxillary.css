@@ -80,8 +80,8 @@ forms/contact section
     padding: 120px 0;
 }
 .form.is-red .form-control {
-    background-color: #bf1e0d;
-    border-color: #bf1e0d;
+    background-color: rgb(206, 212, 218);
+    border-color: rgb(206, 212, 218);
     color: #fff;
 }
 .callback-form .form-control {
@@ -106,7 +106,7 @@ textarea.form-control{
     color: var(--black);
     background-color: transparent;
     background-clip: padding-box;
-    border: 1px solid var(--secondary);
+    border: 1px solid var(--text-secondary);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -144,18 +144,24 @@ label {
 .btn-outline {
   font-family: "Roboto", system-ui, -apple-system, Tahoma, helvetica, arial, sans-serif;
   background: white;
-  border: 1px solid #a2a2a2;
+  border: 1px solid #ced4da;
   border-radius: 4px;
   color: var(--secondary);
   outline: 0 none;
   padding: 15px 25px;
   position: relative;
-  transition: all 1s ease-in-out;
+  transition: all .5s ease-in-out;
   cursor: pointer;
+}
+.btn-outline:hover{
+    border-color: transparent !important;
+    box-shadow: 0.5em 0.5em 0.5em 0.5em #EEE;
+    transition: all .5s ease-in-out;
 }
 .btn-outline::after, .btn-outline::before {
   border-radius: 4px;
   border-width: 1.5px;
+  border-color: #ced4da !important;
   content: "";
   height: 100%;
   left: 0;
@@ -175,18 +181,18 @@ label {
     background-color: transparent;
     color: var(--primary);
 }
-.btn-green::before {
-    border-bottom: 1px solid var(--primary);
-    border-left:1px solid var(--primary);
+.btn-outline::before {
+    border-bottom: 1px solid var(--text-secondary);
+    border-left:1px solid var(--text-secondary);
     transform-origin: 0 100%;
 }
-.btn-green::after {
-    border-top: 1px solid var(--primary);
-    border-right: 1px solid var(--primary);
+.btn-outline::after {
+    border-top: 1px solid var(--text-secondary);
+    border-right: 1px solid var(--text-secondary);
     transform-origin: 100% 0;
 }
 .btn-outline:hover::after, .btn-outline:hover::before {
-      transform: scale(1);
+      transform: scale(1) !important;
       transition: all .8s ease-in-out;
 }
 .border-highlight:before{
@@ -228,17 +234,17 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
     }
 }
 #contact .btn-danger-lite:before, .btn-red-lite:before {
-    border-color: #bf1e0d!important;
+    border-color: rgb(206, 212, 218)!important;
 }
 #contact .btn-danger-lite:after, .btn-red-lite:after {
-    border-color: #9c1e11!important;
+    border-color: rgb(206, 212, 218) !important;
 }
 #contact .btn {
     text-align: center;
     vertical-align: middle;
     user-select: none;
-    border-color: #bf1e0d;
-    border: 1px solid transparent;
+    border-color: rgb(206, 212, 218);
+    border: 1px solid #ced4da;
     line-height: 1.5;
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
@@ -263,7 +269,7 @@ input:-internal-autofill-selected {
 .is-red input:hover,.is-red input:active,.is-red input:focus{
     border: none!important;
     outline: none !important;
-    border-color: transparent !important;
+    border-color: rgba(0,0,0,.1) !important;
     box-shadow: 0 0 0 transparent !important;
 }
 .form-floating>.form-control:autofill ~label{
@@ -277,12 +283,12 @@ input:-internal-autofill-selected {
 }
 .form-floating>.form-control:-webkit-autofill{
     
-    background-color: #bf1e0d!important;
-    border-color: #bf1e0d!important;
+    background-color: rgb(206, 212, 218)!important;
+    border-color: rgb(206, 212, 218)!important;
 }
 .form-floating>.form-control:autofill{
-    background-color: #bf1e0d!important;
-    border-color: #bf1e0d!important;
+    background-color: rgb(206, 212, 218)!important;
+    border-color: rgb(206, 212, 218)!important;
 }
 .display-7 {
     font-size: calc(1rem + 1vw);
@@ -398,4 +404,36 @@ a.text-orange:hover{
     right: 0;
     z-index: -1;
     box-shadow: 5px 3px 2px 1px rgb(0 0 0 / 20%);
+}
+.fs-xxl{
+    font-size: 2.5em;
+}
+.centered{
+    text-align: center;
+    align-self: center;
+}
+.clickable:hover{
+    cursor: pointer;
+}
+.text-black{
+    color: black;
+}
+.bg-white{
+    background-color: white;
+}
+.text-black{
+    color: black;
+}
+.location{
+    height: auto !important;
+}
+.trail-img{
+    height: 100%;
+    width: auto;
+    background-position: top center;
+    background-attachment:initial;
+    background-size:cover;
+    position: relative;
+    padding: 120px 0;
+    z-index: 3
 }

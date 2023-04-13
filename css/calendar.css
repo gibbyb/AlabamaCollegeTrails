@@ -34,7 +34,14 @@ html, body {
     right:0;
     z-index: 12;
     max-width:700px!important;
-    max-height: 85vh!important;
+    max-height: 90vh!important;
     border-radius: 15px;
     border: 1px solid black;
+}
+.title-popup{
+    font-weight: 800 !important;
+    line-height: 21px;    
+}
+.box-float{
+    box-shadow: 5px 3px 2px 1px rgb(0 0 0 / 20%);
 }

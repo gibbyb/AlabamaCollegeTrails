@@ -63,7 +63,9 @@ class Database{
     function createTables()
     {
         //$this->dropTable("alabama_trails_events");
-        $this->createEvents();
+        $this->createEvents();//make table if doesn't exist
+        $this->createMessage();//make table if doesn't exist
+        $this->createApplication();//make table if doesn't exist
         return true;
     }   
     /**
@@ -122,6 +124,122 @@ class Database{
                return $stmt->fetchAll();
            }else{
                $this->msg = 'unknown error getting events';//set error
+               return null; 
+           }
+       }
+    }
+    /**
+    * Create table Application
+    *@return bool success/fail
+    */
+    function createApplication(){
+        $pdo = $this->pdo;
+        try {
+            $sql = "CREATE TABLE IF NOT EXISTS Application (
+                id int(10) AUTO_INCREMENT PRIMARY KEY,
+                UserName varchar(250) not null,
+                Email varchar(250) not null,
+                SocialMediaInfo varchar(2000),
+                Phone char(14),
+                YearsHiking int(10),
+                HasBeenGuide bit not null
+                )";
+            $pdo->exec($sql);
+            return true;
+        }
+        catch(PDOException $e){
+                $this->msg = 'error creating events table: '.$e->getMessage();
+                return false;
+        }
+    }
+    /**
+     * @param $username string
+     * @param $email string
+     * @param $info string
+     * @param $phone string
+     * @param $yearsHiking int
+     * @param $hasBeenGuide bool
+     * @return bool
+     */
+    function setApplication($username, $email, $info, $phone, $yearsHiking, $hasBeenGuide){
+        $pdo = $this->pdo;//connection            
+        $stmt = $pdo->prepare('Insert INTO Application (UserName, Email, SocialMediaInfo, Phone, YearsHiking, HasBeenGuide) VALUES (?, ?, ?, ?, ?, ?)');//statement
+        if($stmt->execute([$username, $email, $info, $phone, $yearsHiking, $hasBeenGuide])){//execute - success
+            return true;
+        }else{//execute - failure
+            $this->msg = 'Failed creating Application.';//set error
+            return false;//you loose
+        }        
+    }
+    
+    /**
+    * @return array - array of Applications 
+    */
+   function getApplication(){
+       $pdo = $this->pdo;//connect
+       if(!isset($pdo)){
+           $this->msg = 'Connection Error!';
+           return null;
+       }else{
+           $stmt = $pdo->prepare('SELECT * FROM Application');
+           if($stmt->execute()){
+               return $stmt->fetchAll();
+           }else{
+               $this->msg = 'unknown error getting Application';//set error
+               return null; 
+           }
+       }
+    }
+    /**
+    * Create table Message
+    *@return bool success/fail
+    */
+    function createMessage(){
+        $pdo = $this->pdo;
+        try {
+            $sql = "CREATE TABLE IF NOT EXISTS Message (
+                id int(10) AUTO_INCREMENT PRIMARY KEY,
+                UserName varchar(250) not null,
+                Email varchar(250) not null,
+                Phone char(14),
+                Message varchar(5000)
+                )";
+            $pdo->exec($sql);
+            return true;
+        }
+        catch(PDOException $e){
+                $this->msg = 'error creating Message table: '.$e->getMessage();
+                return false;
+        }
+    }
+    /**
+     * @return bool
+     */
+    function setMessage($username, $email, $phone, $message){
+        $pdo = $this->pdo;//connection            
+        $stmt = $pdo->prepare('Insert INTO Message (UserName, Email, Phone, Message) VALUES (?, ?, ?, ?)');//statement
+        if($stmt->execute([$username, $email, $phone, $message])){//execute - success
+            return true;
+        }else{//execute - failure
+            $this->msg = 'Failed creating Message.';//set error
+            return false;//you loose
+        }        
+    }
+    
+    /**
+    * @return array - array of messages 
+    */
+   function getMessage(){
+       $pdo = $this->pdo;//connect
+       if(!isset($pdo)){
+           $this->msg = 'Connection Error!';
+           return null;
+       }else{
+           $stmt = $pdo->prepare('SELECT * FROM Message');
+           if($stmt->execute()){
+               return $stmt->fetchAll();
+           }else{
+               $this->msg = 'unknown error getting Message';//set error
                return null; 
            }
        }
