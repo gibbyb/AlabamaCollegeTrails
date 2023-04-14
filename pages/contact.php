@@ -26,7 +26,7 @@ if(!isset($database)){$database = new Database();}//initialize database - why no
                     <h2 class="text-black font-weight-bold d-inline-block text-uppercase border-bottom border-5 border-bright">Get In Touch</h2>
                     <h2 class="display-4 text-black d-inline-block text-uppercase">We need volunteers!</h2>
                     <p class="display-7 text-black">
-                        Submit this form and one of our senior member will get back to you.
+                        We would love to hear from you!
                     </p>
                 </div>
                 <div class="col-lg-4">
