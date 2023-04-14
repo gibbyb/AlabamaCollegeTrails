@@ -229,17 +229,25 @@ section {
 -   Location Section
 ***************************************************************************/
 
+#trails-header{
+    text-align: center;
+    padding: 3em;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
 #trails-vh {
     display: flex;
     align-items: center;
-    height: 100vh;
+    height: 100%;
 }
 
 #trails-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 650px;
+    height: 100%;
+    margin-bottom: 5em;
     flex-wrap: wrap;
     column-gap: 1em;
     row-gap: 1em;
@@ -247,7 +255,7 @@ section {
 
 .trail-section {
     display: flex;
-    width: 15em;
+    width: 30em;
     height: 20em;
     background-color: #447638;
     border: 1px solid #233d1d;

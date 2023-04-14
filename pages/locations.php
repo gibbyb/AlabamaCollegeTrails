@@ -3,7 +3,7 @@
   $trails = json_decode($trails_file, true);
 ?>
 
-<h1>Featured Trails</h1>
+<h1 id="trails-header">Featured Trails</h1>
 <div id="trails-vh">
   <div id="trails-container">
     <?php
