@@ -24,7 +24,7 @@ if(str_contains(page, "calendar")){//calendar page variables
 }else if(str_contains(page,"join")){//join page variables
     $title = "Come and Join";
     $subtitle = "Join Upcoming Hikes";   
-    $heroImg = "contact.jpg";//in the img folder
+    $heroImg = "Join.jpg";//in the img folder
 }
 ?>
 <!DOCTYPE html>
