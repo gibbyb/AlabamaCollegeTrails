@@ -1,3 +1,6 @@
+/*
+    Written By Gabriel Brown
+ */
 const apiKey = '48de410b1ca6ed6a4ce8e52bd9c60479';
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
@@ -33,21 +36,8 @@ async function updateTrailData() {
         if (data.hasOwnProperty('rain')) {
             rainElement.innerText = `Chance of rain: ${data.rain['1h']}%`;
         } else {
-            rainElement.innerText = 'Chance of rain: 0%';
+            rainElement.innerText = 'No rain today.';
         }
-
-    }
-}
-
-// function to get the current temperature for a trail location
-async function getTemperature(trail) {
-    const location = trailLocations[trail];
-    try {
-        const data = await getWeatherData(location);
-        return data.main.temp;
-    } catch (error) {
-        console.error(error);
-        return 'N/A';
     }
 }
 

@@ -26,8 +26,9 @@ if(!isset($database)){$database = new Database();}//initialize database - why no
                     <h2 class="text-black font-weight-bold d-inline-block text-uppercase border-bottom border-5 border-bright">Get In Touch</h2>
                     <h2 class="display-4 text-black d-inline-block text-uppercase">We need volunteers!</h2>
                     <p class="display-7 text-black">
-                        We would love to hear from you!
+                        Submit this form and one of our senior members will get back to you.
                     </p>
+                    <div id="result" class="mt-2 mb-2 text-black"></div>
                 </div>
                 <div class="col-lg-4">
                     <form class="form form-floating callback-form form">
@@ -49,7 +50,6 @@ if(!isset($database)){$database = new Database();}//initialize database - why no
                           </div>
                         <button id="contact_us_btn" class="btn btn-outline text-black">Submit</button>
                     </form>
-                    <div id="result" class="mt-3"></div>
                 </div>
             </div>
         </div>

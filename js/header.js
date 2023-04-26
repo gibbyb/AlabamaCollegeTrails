@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //preloader
     setTimeout(function(){//wait a second, there! - make sure everything has loaded (on client)
         $('#preloader').css('background-color','transparent');//looks better
-        $('#preloader').fadeOut('slow');//hide spinner
+        $('#preloader').fadeOut('slow');//hide spinner only - looks better
     },1000);//1 second
     
     //Sticky header on scroll
@@ -112,5 +112,23 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
           });
     }
-    
+    $('#subscribe').on('click',function(event){
+        event.preventDefault();
+        if(!isEmail($('#email-subscribe').val())){//security function
+            $('#newsletter').html("<p class='alert alert-danger'>You must enter a valid email!</p>").hide().slideDown("fast");
+            return;
+        };
+        $.post('../workers/events.php',{'postType':'subscribe','email':$('#email-subscribe').val()},function(result){
+            result = JSON.parse(result);
+            if(result.error){
+                $('#newsletter').html("<p class='alert alert-danger'>"+result.msg+"</p>").hide().slideDown("fast");
+            }else{
+                $('#newsletter').html("<p class='alert alert-primary'>"+result.msg+"</p>").hide().slideDown("fast");
+            }
+        });
+    });
+    function isEmail(email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
+    }
 });

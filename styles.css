@@ -77,7 +77,7 @@ section {
     min-width:100%;
 }
 #content{
-    margin-top: 7%;
+    margin-top: 3%;
 }
 .section-header {
   text-align: center;
@@ -161,118 +161,24 @@ section {
 /***************************************************************************
 -   Welcome Section
 ***************************************************************************/
-.join-header-section{
-    padding: 50px 0;
-    background-color: white;
-}
-.join-header-section h2 {
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.join-header-section p {
-    font-size: 18px;
-    line-height: 1.5;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.join-header-section-row {
-    margin-right: 5%;
-    margin-left: 5%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.join-section input[type="text"] {
-    padding: 10px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.join-section form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.join-section label {
-    text-align:center;
-    font-size: 18px;
-    margin-right: 10px;
-}
-
 .welcome-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 500px;
+    height: 100vh;
     background-color: #f2f2f2;
 }
 .welcome-section img {
     margin-top: 2%;
-    height: 400px;
+    max-height: 70vh;
+    width: auto;
 }
 
 .welcome-section h1 {
     font-size: 40px;
     text-align: center;
 }
-
-/***************************************************************************
--   Location Section
-***************************************************************************/
-
-#trails-header{
-    text-align: center;
-    padding: 3em;
-    font-size: 24px;
-    font-family: sans-serif;
-}
-
-#trails-vh {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-#trails-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin-bottom: 5em;
-    flex-wrap: wrap;
-    column-gap: 1em;
-    row-gap: 1em;
-}
-
-.trail-section {
-    display: flex;
-    width: 30em;
-    height: 20em;
-    background-color: #447638;
-    border: 1px solid #233d1d;
-    padding: 1em;
-    background-size: cover;
-    justify-content: center;
-    align-items: center;
-    font-family: sans-serif;
-}
-
-.trail-header {
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    /* border-bottom: 1px solid #7eb56a; */
-}
-
 
 /* About Us Section */
 .about-us-section {
@@ -307,31 +213,10 @@ section {
     margin-bottom: 1%;
     text-align: center;
 }
-
-.featured-hikes-row {
-    margin-right: 5%;
-    margin-left: 5%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
 .card {
-    max-width: 20%;
-    flex-basis: calc(25% - 20px);
-    width: 25%;
-    margin: 10px;
     background-color: #444;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    padding: 5px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.featured-hikes .card {
-    margin: 10px;
 }
 
 .featured-hikes-section .card img {
@@ -357,6 +242,7 @@ section {
 
 .card-title {
     font-size: 24px;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 

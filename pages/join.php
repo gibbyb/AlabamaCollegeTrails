@@ -15,6 +15,26 @@ if(!isset($database)){$database = new Database();}//initialize database - why no
     #example-id{
         
     }
+
+    .upload-btn {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .upload-btn:hover {
+        background-color: #3e8e41;
+    }
+
 </style>
 
 <section id="join" class="bg-grey">
@@ -78,3 +98,8 @@ if(!isset($database)){$database = new Database();}//initialize database - why no
         </div>
     </div>
 </section>
+
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input class="upload-btn" type="submit" value="Upload Image" name="submit">
+</form>

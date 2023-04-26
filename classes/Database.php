@@ -66,6 +66,7 @@ class Database{
         $this->createEvents();//make table if doesn't exist
         $this->createMessage();//make table if doesn't exist
         $this->createApplication();//make table if doesn't exist
+        $this->createGallery();
         return true;
     }   
     /**
@@ -190,6 +191,28 @@ class Database{
            }
        }
     }
+    /*
+     * Create gallery table
+     */
+    function createGallery(){
+        $pdo = $this->pdo;
+        try {
+            $sql = "CREATE TABLE IF NOT EXISTS `Gallery` (
+          `id` int(11) NOT NULL AUTO_INCREMENT,
+          `filename` varchar(255) NOT NULL,
+          `filepath` varchar(255) NOT NULL,
+          PRIMARY KEY (`id`)
+        ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;";
+            $pdo->exec($sql);
+            return true;
+        }
+        catch(PDOException $e){
+            $this->msg = 'error creating gallery table: '.$e->getMessage();
+            return false;
+        }
+    }
+
+
     /**
     * Create table Message
     *@return bool success/fail

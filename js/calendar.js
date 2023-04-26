@@ -118,7 +118,7 @@ $('#export').on('click',function(){//export events database btn
 //sets a new event - "Add Event" popup btn
 $('#btn-event').on('click',function(e){
     e.preventDefault();
-    console.log(startTime.toDateString());
+    //console.log(startTime.toDateString());
     var data = {
         "postType":'setEvent',
         "title":$('#event_title').val(),//event title
@@ -130,7 +130,7 @@ $('#btn-event').on('click',function(e){
         "start":$('#event_start').val()/100,
         "end":$('#event_end').val()/100
     };
-    console.log(data);
+    //console.log(data);
     if(data.title !== null && data.title.length > 1){
         //console.log('event start: '+data.start);
         $.post('../workers/events.php',data,function(result){

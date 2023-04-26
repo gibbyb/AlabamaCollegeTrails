@@ -84,4 +84,29 @@ if(isset($_POST) && isset($_POST['postType'])){
             die(print(json_encode(array('error'=> 1, 'msg' => "<p class='alert alert-danger'>"+$database->printError()+"</p>"))));
         }
     }
+    else if($_POST['postType'] === 'subscribe'){
+        $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
+
+        $subject = "Alabama Trails Newsletter Request.";
+
+        //email body
+        $message_body = "Alabama Trails Newsletter Request"."\r\nEmail: ".$email;
+
+        // In case any of our lines are larger than 70 characters
+        $message_final = wordwrap($message_body, 70, "\r\n");
+
+        // compose headers
+        $headers = "From: ".$email."\r\n";
+        $headers .= "Reply-To: $email\r\n";
+        $headers .= "X-Mailer: PHP/".phpversion();
+
+        mail('rahaprogramming@gmail.com', $subject, $message_final, $headers);
+        $send_mail = mail('UnivHikingUSM@gmail.com', $subject, $message_final, $headers);
+
+        if($send_mail){
+            die(print(json_encode(array('error'=> 0, 'msg' => "Thank you for signing up for the newsletter!"))));
+        }else{
+            die(print(json_encode(array('error'=> 1, 'msg' => "Error registering for newsletter"))));
+        }
+    }
 }
