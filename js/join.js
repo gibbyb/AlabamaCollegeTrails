@@ -28,27 +28,31 @@ document.addEventListener('DOMContentLoaded', () => {
             error = true;
             errorMsg = "Please enter a name";
         }
-        if(!isEmail($('#email').val())){
+        if(!isEmail($('#email').val())){//value
             error = true;
             errorMsg = "Invalid email";
         };
-        if(!error){//$.post(url,{data:datavalue},function(result){});
-            $.post('../workers/join.php',{
-                'name':$('#name').val(),
-                'phone':$('#phone').val(),
-                'email':$('#email').val(),
-                'socialmediainfo':$('#socialmediainfo').val(),
-                'experience':$('#experience').val(),
-                'yesCheck':checked
-            },function(phpResultData){
-                phpResultData = JSON.parse(res);//convert string to Object - otherwise result.error will give an error
-                console.log(phpResultData);
-                if(phpResultData.error){//hide() just adds display:none to style. This way we can add animation slideDown(int speedInMilliseconds) or slideUp etc..
-                    $('#result').html("<p class='alert alert-danger'>"+phpResultData.msg+"</p>").hide().slideDown('fast').show();//.html() retrieves text in that block 
-                }else{
-                    $('#result').html("<p class='alert alert-success'>"+phpResultData.msg+"</p>").hide().slideDown('fast').show();//.html("enter new text") changes the text
-                }
-            });
+        if(!error){
+            //$.post(url,{data:datavalue},function(resultFromPHPString){});
+            $.post('../workers/join.php',
+                {
+                    'name':$('#name').val(),//value
+                    'phone':$('#phone').val(),//value
+                    'email':$('#email').val(),//value
+                    'socialmediainfo':$('#socialmediainfo').val(),//value
+                    'experience':$('#experience').val(),//value
+                    'yesCheck':checked
+                },
+                function(phpResultData){
+                    phpResultData = JSON.parse(res);//convert string to Object - otherwise result.error will give an error
+                    console.log(phpResultData);
+                    if(phpResultData.error){//hide() just adds display:none to style. This way we can add animation slideDown(int speedInMilliseconds) or slideUp etc..
+                        $('#result').html("<p class='alert alert-danger'>"+phpResultData.msg+"</p>").hide().slideDown('fast').show();//.html() retrieves text in that block 
+                    }else{
+                        $('#result').html("<p class='alert alert-success'>"+phpResultData.msg+"</p>").hide().slideDown('fast').show();//.html("enter new text") changes the text
+                    }
+                }//end function
+            );//end post to PHP worker
         }else{
             $('#result').html("<p class='alert alert-danger'>"+errorMsg+"</p>").hide().slideDown('fast').show();
         }
