@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     "use strict";
     var checked = false;
-    $('#yesCheck').on('change', e => {
+    $('#yesCheck').on('change', event => {
         if(e.target.checked === true) {
             checked = true;
             $('#noCheck').removeAttr('checked');//remove attribute
@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
             $('#noCheck').prop('checked','checked');
         }
     });
-    $('#joinBtn').on('click',function(e){
-        e.preventDefault();//prevent page reloading on button click
+    $('#joinBtn').on('click',function(event){
+        event.preventDefault();//prevent page reloading on button click
         var error = false, errorMsg="";
         if($('#name').val().length < 2){//value
             error = true;
