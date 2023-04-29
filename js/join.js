@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "use strict";
     var checked = false;//variable checked - javascript will get the data type automatically
     $('#yesCheck').on('change', event => {
-        if(e.target.checked === true) {
+        if(event.target.checked === true) {
             checked = true;
             $('#noCheck').removeAttr('checked');//remove attribute
             $('#yesCheck').attr('checked','checked');//for compatability between browsers - add attribute checked=false to element ID yesCeck
