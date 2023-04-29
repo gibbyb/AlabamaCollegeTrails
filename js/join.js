@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             $('#noCheck').prop('checked','checked');
         }
     });
-    $('#joinBtn').on('click',function(event){
+    $('#joinBtn').on('click',function(event){//think of event in function(event) as what is returned from this click event
         event.preventDefault();//prevent page reloading on button click
         var error = false, errorMsg="";
         if($('#name').val().length < 2){//value
