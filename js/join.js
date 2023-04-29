@@ -40,10 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
             },function(res){
                 res = JSON.parse(res);//convert string to Object - otherwise result.error will give an error
                 console.log(res);
-                if(res.error){
-                    $('#result').html("<p class='alert alert-danger'>"+res.msg+"</p>").hide().slideDown('fast').show();
-                }else{
-                    $('#result').html("<p class='alert alert-success'>"+res.msg+"</p>").hide().slideDown('fast').show();
+                if(res.error){//hide() just adds display:none to style. This way we can add animation slideDown(int speedInMilliseconds) or slideUp etc..
+                    $('#result').html("<p class='alert alert-danger'>"+res.msg+"</p>").hide().slideDown('fast').show();//.html() retrieves text in that block 
+                }else{//$('#ID) to get elements by ID or $('.class') to get all elements with a class name
+                    $('#result').html("<p class='alert alert-success'>"+res.msg+"</p>").hide().slideDown('fast').show();//.html("enter new text") changes the text
                 }
             });
         }else{
