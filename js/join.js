@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     'yesCheck':checked
                 },
                 function(phpResultData){
-                    phpResultData = JSON.parse(phpResultData);//convert string to Object - otherwise result.error will give an error
+                    phpResultData = JSON.parse(phpResultData);//convert string to Object - otherwise result.error and result.msg will give an error and break the javascript
                     console.log(phpResultData);
                     if(phpResultData.error){//hide() just adds display:none to style. This way we can add animation slideDown(int speedInMilliseconds) or slideUp etc..
                         $('#result').html("<p class='alert alert-danger'>"+phpResultData.msg+"</p>").hide().slideDown('fast').show();//.html() retrieves text in that block 
