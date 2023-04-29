@@ -2,6 +2,7 @@
 
 /* 
  * licensed under the GPL.
+ * This is meant to be an absolute positioned popup elemant, but hasnt been implemented into the site
  */
 require_once __DIR__.'/../../config.php';
 ?>
