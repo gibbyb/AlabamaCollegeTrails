@@ -1,5 +1,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
+    //$('#ID) to get elements by ID or $('.class') to get all elements with a class name
+    //Id's should be unique to elements. classes can have multiple elements. $('.className') will return an iterable array of all elements with that class name (not at all related to what we consider a class in a compiled laguages like C++)
+    
     "use strict";
     var checked = false;
     $('#yesCheck').on('change', e => {
@@ -42,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(res);
                 if(res.error){//hide() just adds display:none to style. This way we can add animation slideDown(int speedInMilliseconds) or slideUp etc..
                     $('#result').html("<p class='alert alert-danger'>"+res.msg+"</p>").hide().slideDown('fast').show();//.html() retrieves text in that block 
-                }else{//$('#ID) to get elements by ID or $('.class') to get all elements with a class name
+                }else{
                     $('#result').html("<p class='alert alert-success'>"+res.msg+"</p>").hide().slideDown('fast').show();//.html("enter new text") changes the text
                 }
             });
