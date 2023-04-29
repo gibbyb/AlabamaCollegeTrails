@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             errorMsg = "Invalid email";
         };
         if(!error){
-            //$.post(url,{data:datavalue},function(resultFromPHPString){});
+            //$.post(url,{postDataGoingToPHP:datavalue},function(resultFromPHPString){});
             $.post('../workers/join.php',
                 {
                     'name':$('#name').val(),//value
