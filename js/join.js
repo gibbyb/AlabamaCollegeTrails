@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //Id's should be unique to elements. classes can have multiple elements. $('.className') will return an iterable array of all elements with that class name (not at all related to what we consider a class in a compiled laguages like C++)
     
     "use strict";
-    var checked = false;
+    var checked = false;//variable checked - javascript will get the data type automatically
     $('#yesCheck').on('change', event => {
         if(e.target.checked === true) {
             checked = true;
