@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             $('#yesCheck').prop('checked','checked');//add property checked="checked" (modern way of doing this)
         }
     });
+    //jQuery implents the .on('eventName',function(event){..code}) function for any event such as 'click', 'change', or 'scroll'
     $('#noCheck').on('change', e => {
         if(e.target.checked === true) {
             checked = false;
