@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if(!error){
             //$.post(url,{postDataGoingToPHP:datavalue},function(resultFromPHPString){});
             $.post('../workers/join.php',
-                {
+                {   //array sent to PHP worker
                     'name':$('#name').val(),//value
                     'phone':$('#phone').val(),//value
                     'email':$('#email').val(),//value
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     'experience':$('#experience').val(),//value
                     'yesCheck':checked
                 },
-                function(phpResultData){
+                function(phpResultData){//phpResultData is the array that is returned from the worker script
                     phpResultData = JSON.parse(phpResultData);//convert string to Object - otherwise result.error and result.msg will give an error and break the javascript
                     console.log(phpResultData);
                     if(phpResultData.error){//hide() just adds display:none to style. This way we can add animation slideDown(int speedInMilliseconds) or slideUp etc..
