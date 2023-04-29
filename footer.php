@@ -18,10 +18,12 @@
     if(str_contains(page,"calendar")){//loads custom js for specific pages
         print "<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>";
         print '<script src="js/calendar.js"></script>';
-    }else
-    if(str_contains(page,"contact")){
+    }else if(str_contains(page,"contact")){
         print '<script src="js/contact.js"></script>';
+    }else if(str_contains(page,"join")){
+        print '<script src="js/join.js"></script>';
     }
+    
     ?>
 </body>
 </html>

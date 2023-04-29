@@ -36,7 +36,6 @@ if(!isset($database)){$database = new Database();}//initialize database - why no
     }
 
 </style>
-
 <section id="join" class="bg-grey">
     <div class="container-fluid" data-aos="fade-up">
         <div class="container">
@@ -68,7 +67,7 @@ if(!isset($database)){$database = new Database();}//initialize database - why no
                             <label for="socialmediainfo" class="text-black label-top">Socials</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="text" class="form-control" id ="experience" pattern="[0-9]{2}" placeholder="experience" autocomplete="experience">
+                            <input type="text" class="form-control" id ="experience" pattern="[0-9]" placeholder="experience" autocomplete="experience">
                             <label for="experience" class="text-black label-top"># of Years Experience</label>
                         </div>
                         <div class="form-floating mb-4">
@@ -77,11 +76,11 @@ if(!isset($database)){$database = new Database();}//initialize database - why no
                             </p>
                         </div>
                         <div>
-                            <input type="radio" name="yes" id ="yesCheck" >
+                            <input type="checkbox" name="yes" id ="yesCheck" >
                             <label for="yesCheck" class="text-black">Yes</label>
                         </div>
                         <div>
-                            <input type="radio" name="no" id ="noCheck" >
+                            <input type="checkbox" name="no" id ="noCheck" checked='checked'>
                             <label for="noCheck" class="text-black">No</label>
                         </div>
                         <div class="form-floating mb-4">
@@ -91,6 +90,7 @@ if(!isset($database)){$database = new Database();}//initialize database - why no
                         <div class="form-floating mb-4">
                             <button id="joinBtn" class="btn btn-outline text-black">Submit</button>
                         </div>
+                        <div id='result'></div>
                     </form>
                     
                 </div>
@@ -99,7 +99,7 @@ if(!isset($database)){$database = new Database();}//initialize database - why no
     </div>
 </section>
 
-<form action="upload.php" method="post" enctype="multipart/form-data">
+<!--form action="upload.php" method="post" enctype="multipart/form-data">
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input class="upload-btn" type="submit" value="Upload Image" name="submit">
-</form>
+</form-->
