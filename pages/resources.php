@@ -56,7 +56,7 @@
 
       <br>
       <div>  
-        <h3>Hiking CheckList</h3>
+        <h3>Hiking for beginners can be intimidating, but there's really not much to it. You don't need any special skills to hike; you just have to be able to walk and know where you are. It's a great way to immerse yourself in nature, get a good workout in, and recharge your batteries. This guide will give you some essential hiking for beginners tips to make your hike safe and fun.</h3>
         <ul style="display: inline-block;">
           <li style="color:black">Hiking backpack</li>
           <li style="color:black">Weather-appropriate clothing</li>
