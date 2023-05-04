@@ -48,7 +48,7 @@
       </div>
 
       <div style="text-align:center">
-        <h2>For Beginners</h2>
+        <h2>Hiking is a wonderful way to immerse yourself in the outdoors. Transported by your own two feet and carrying only what you need for the day on your back, you can discover the beauty of nature at whatever pace you’re comfortable with. And, with a little planning and preparation, it’s an activity that almost anyone can do.</h2>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/edElLWvSVLk" 
         title="YouTube video player" 
         frameborder="0" 
@@ -56,7 +56,7 @@
 
       <br>
       <div>  
-        <h3>Hiking for beginners can be intimidating, but there's really not much to it. You don't need any special skills to hike; you just have to be able to walk and know where you are. It's a great way to immerse yourself in nature, get a good workout in, and recharge your batteries. This guide will give you some essential hiking for beginners tips to make your hike safe and fun.</h3>
+        <h3>Hking Resources</h3>
         <ul style="display: inline-block;">
           <li style="color:black">Hiking backpack</li>
           <li style="color:black">Weather-appropriate clothing</li>
