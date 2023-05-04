@@ -48,7 +48,7 @@
       </div>
 
       <div style="text-align:center">
-        <h2>Hiking is a wonderful way to immerse yourself in the outdoors. Transported by your own two feet and carrying only what you need for the day on your back, you can discover the beauty of nature at whatever pace you’re comfortable with. And, with a little planning and preparation, it’s an activity that almost anyone can do.</h2>
+          <h2>Hiking is a wonderful way to immerse yourself in the outdoors. It is a form of exercise, and if you take a half-day slow walk or a month-long mountain climb, you will feel your body stretch its limbs and earn its food.You might think that jogging, running, cycling, or other exercise enjoy the same scenic pleasure, but in reality, they cannot appreciate their surroundings in the same way. Moving fast defeats the object of a hike. Transported by your own two feet and carrying only what you need for the day on your back, you can discover the beauty of nature at whatever pace that is most comfortable.With a little planning and preparation, it’s an activity that almost anyone can do.</h2>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/edElLWvSVLk" 
         title="YouTube video player" 
         frameborder="0" 
