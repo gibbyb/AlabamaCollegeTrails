@@ -38,7 +38,7 @@ if( isset($_POST) ){
 
     //email body
     $message_body = "Alabama Hiking trails join form \nname: $name";
-    $message_body .= "\r\nEmail: $email\r\nmessage: $message";
+    $message_body .= "\r\nEmail: $email\r\nInfo: $info\r\nPhone: $phone\r\nYears Hiked: $yearsHiking\r\nHave they been a guide?: $hasBeenGuide";
 
     // In case any of our lines are larger than 70 characters
     $message_final = wordwrap($message_body, 70, "\r\n");
