@@ -34,10 +34,10 @@ if( isset($_POST) ){
         
          
     
-    $subject = "Alabama Hiking trails contact form for $name";
+    $subject = "Alabama Hiking Trails Join Form for $name";
 
     //email body
-    $message_body = "Alabama Hiking trails join form \nname: $name";
+    $message_body = "Alabama Hiking Trails Join Form \nname: $name";
     $message_body .= "\r\nEmail: $email\r\nInfo: $info\r\nPhone: $phone\r\nYears Hiked: $yearsHiking\r\nHave they been a guide?: $hasBeenGuide";
 
     // In case any of our lines are larger than 70 characters
@@ -54,7 +54,7 @@ if( isset($_POST) ){
     if($send_mail){
         die(print(json_encode(array('error'=> 0, 'msg' => "<p class='alert alert-primary'>Thank you, $name! Your message has been sent.</p>"))));
     }else{
-        die(print(json_encode(array('error'=> 1, 'msg' => "Error sending contact form."))));
+        die(print(json_encode(array('error'=> 1, 'msg' => "Error sending join form."))));
     }
 }
 ?>
