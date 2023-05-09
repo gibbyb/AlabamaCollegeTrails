@@ -22,9 +22,9 @@ if(str_contains(page, "calendar")){//calendar page variables
     $subtitle = "Don't be a stranger";   
     $heroImg = "contact.jpg";//in the img folder
 }else if(str_contains(page,"join")){//join page variables
-    $title = "Contact Us";
-    $subtitle = "Don't be a stranger";   
-    $heroImg = "contact.jpg";//in the img folder
+    $title = "Come and Join";
+    $subtitle = "Join Upcoming Hikes";   
+    $heroImg = "Join.jpg";//in the img folder
 }
 ?>
 <!DOCTYPE html>
