@@ -1,8 +1,14 @@
-<div class="welcome-section">
-    <img class="card-img-top" src="img/hikers-on-trail.jpg" alt="Happy Hikers on a Trail" class="">
-    <h1>Welcome to Alabama College Trails!</h1>
+<div class="welcome-section d-flex justify-content-center h-100 bg-light align-items-center w-100">
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <img class="card-img-top center center-horizontal centered mt-5 mx-auto img-fluid" src="img/hikers-on-trail.jpg" alt="Happy Hikers on a Trail" class="" stle="max-height: 70vh;width: auto;">
+            </div>
+            <div class="col-12 mt-3">
+                <h1 class="h1 centered">Welcome to Alabama College Trails!</h1>                
+            </div>
 </div>
-<script src="js/weather.js"></script>
+        <script src="js/weather.js"></script>
 <div class="about-us-section">
     <h2>About Us</h2>
     <p class="centered">Alabama College Trails is a club for outdoor enthusiasts who love to explore the beautiful trails of Alabama. Our members come from all walks of life and all levels of experience, but we share a common love for hiking and the great outdoors. Whether you're a seasoned hiker or just starting out, we welcome you to join us on our adventures!</p>

@@ -250,6 +250,12 @@ nav .social-links {
 /*--------------------------------------------------------------
 # Mobile Navigation
 --------------------------------------------------------------*/
+
+
+    .mobile-nav-active .navbar {
+        right: 0;
+        transition: right .3s ease-in-out;
+    }
 @media (max-width: 767.98px) {
     .mt-sm-5{
             margin-top: 3rem!important;
@@ -265,11 +271,6 @@ nav .social-links {
         z-index: 7;
         padding: 74px 15px 15px 15px;
         display: block;
-        transition: right .3s ease-in-out;
-    }
-
-    .mobile-nav-active .navbar {
-        right: 0;
         transition: right .3s ease-in-out;
     }
     
@@ -382,7 +383,7 @@ nav .social-links {
       line-height: 0;
       transition: 0.5s;
       position: fixed;
-      right: 15px;
+      right: 50px;
       top: 35px;
       z-index: 9;
     }

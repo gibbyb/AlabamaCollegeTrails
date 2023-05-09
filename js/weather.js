@@ -33,10 +33,14 @@ async function updateTrailData() {
         const temperatureElement = document.getElementById(`${trail}-temperature`);
         temperatureElement.innerText = `Current temperature: ${data.main.temp}°F`;
         const rainElement = document.getElementById(`${trail}-rain`);
-        if (data.hasOwnProperty('rain')) {
-            rainElement.innerText = `Chance of rain: ${data.rain['1h']}%`;
-        } else {
-            rainElement.innerText = 'No rain today.';
+        if (data.hasOwnProperty('rain'))
+        {
+            const chanceOfRain = Math.round(data.rain['1h']);
+            rainElement.innerText = `Chance of rain: ${chanceOfRain}%`;
+        }
+        else
+        {
+            rainElement.innerText = 'No rain today!';
         }
     }
 }

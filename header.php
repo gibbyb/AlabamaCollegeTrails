@@ -22,15 +22,16 @@ if(str_contains(page, "calendar")){//calendar page variables
     $subtitle = "Don't be a stranger";   
     $heroImg = "contact.jpg";//in the img folder
 }else if(str_contains(page,"join")){//join page variables
-    $title = "Come and Join";
-    $subtitle = "Join Upcoming Hikes";   
-    $heroImg = "Join.jpg";//in the img folder
+    $title = "Contact Us";
+    $subtitle = "Don't be a stranger";   
+    $heroImg = "contact.jpg";//in the img folder
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><?php print get_site_title(); ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"/>
@@ -42,7 +43,7 @@ if(str_contains(page, "calendar")){//calendar page variables
     if(str_contains(page,"calendar")){
         print '<link rel="stylesheet" href="css/calendar.css"/>';
         print '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css"/>';
-    }
+    } 
     ?>
     <link rel="profile" href="https://gmpg.org/xfn/11">
 </head>

@@ -11,17 +11,19 @@
     </ul>
 </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js?ver=3.6.3"></script>
-    <script src="js/header.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js?ver=5.2.3"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js?ver=5.2.3"></script>
     <?php 
+    print '<script src="js/header.js"></script>';
     if(str_contains(page,"calendar")){//loads custom js for specific pages
         print "<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>";
         print '<script src="js/calendar.js"></script>';
-    }else
-    if(str_contains(page,"contact")){
+    }else if(str_contains(page,"contact")){
         print '<script src="js/contact.js"></script>';
+    }else if(str_contains(page,"join")){
+        print '<script src="js/join.js"></script>';
     }
+    
     ?>
 </body>
 </html>

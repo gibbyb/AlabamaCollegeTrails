@@ -30,6 +30,26 @@ PLEASE ENTER YOUR INFORMATION ABOVE IF YOU ARE WORKING ON THIS PROJECT.
     --transparent-primary: rgba(35, 61, 29, .7);
     --transparent: rgba(0,0,0,0);
 }
+/**
+html below would scale font-size from a minimum of 16px (at a 320px viewport) to a maximum of 22px (at a 1000px viewport). 
+**/
+html {
+  font-size: 16px;
+}
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+body {
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
 /* general */
 body,html {
     font-family: var(--font-default);
@@ -169,17 +189,15 @@ section {
     height: 100vh;
     background-color: #f2f2f2;
 }
-.welcome-section img {
-    margin-top: 2%;
-    max-height: 70vh;
-    width: auto;
+.card-img-top{
+    max-width: 768px
 }
-
-.welcome-section h1 {
-    font-size: 40px;
-    text-align: center;
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
 }
-
 /* About Us Section */
 .about-us-section {
     padding: 50px 0;
@@ -324,4 +342,100 @@ section {
     font-size: 18px;
 }
 
+.join-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.upload-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex; /* Change this to inline-flex */
+    align-items: center; /* Add this line */
+    font-size: 16px;
+    margin-bottom: 8px;
+    margin-left: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #3e8e41;
+}
+
+.upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+}
+
+.gallery-header {
+  /* Your CSS rules for the header */
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+  /* Photo Gallery Container */
+  #photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  /* Photo Gallery Images */
+  #photo-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+  }
+
+  /* Photo Gallery Images Hover Effect */
+  #photo-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+
+.file-input-label {
+  cursor: pointer;
+  display: inline-flex; /* Change this to inline-flex */
+  align-items: center; /* Add this line */
+  margin-right: 5px;
+  border: 1px solid #4CAF50;
+  padding: 15px 30px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.file-input-label:hover {
+  background-color: #3e8e41;
+}
+
+.file-input {
+  display: none;
+}
 

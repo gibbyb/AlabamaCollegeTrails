@@ -1,5 +1,5 @@
 <?php
-$target_dir = "img/";
+$target_dir = "../img/";
 $target_file = $target_dir . "userphoto" . (count(glob($target_dir . "userphoto*")) + 1) . ".jpg";
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -42,6 +42,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
+    header('Location: /pages/join.php');
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
@@ -50,24 +51,17 @@ if ($uploadOk == 0) {
         $sql = "INSERT INTO Gallery (filename, filepath) VALUES ('$filename', '$filepath')";
         if ($conn->query($sql) === TRUE) { // add data to the gallery table
             echo "<script>alert('The file ". htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.');</script>";
+            header('Location: /pages/join.php');
         } else {
             echo "<script>alert('There was an error inserting the image information into the database: " . $conn->error . "')</script>";
+            header('Location: /pages/join.php');
+
         }
     } else {
         echo "<script>alert('Sorry, there was an error uploading your file.')</script>";
+        header('Location: /pages/join.php');
     }
 }
 
 mysqli_close($conn);
-?>
 
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="refresh" content="1;url=join">
-</head>
-<body>
-<!-- your HTML code here -->
-</body>
-</html>

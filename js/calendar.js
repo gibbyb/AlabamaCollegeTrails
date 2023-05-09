@@ -101,11 +101,11 @@ $('#btn-rsvp').on('click',function(event){//RSVP btn
     var email = $('#email-rsvp').val();//get email address
     if(isEmail(email)){//if valid email
         $('#addEvent').fadeOut('fast').hide().addClass('d-none');//close popup
+        console.log(email);
         //send RSVP to email address UnivHikingUSM@gmail.com
         $.post('../workers/events.php',{'start':startTime,'postType':'regEvents','email':email,'title':titleCurrent,'address':addressCurrent},function(data){
             data = JSON.parse(data);//parse data
-            if(data.length)//check valid data
-                alert(data.msg);//show success/fail
+            alert(data.msg);//show success/fail
         });
     }else{//invalid email - show message
         alert("you must enter a valid email address to register");

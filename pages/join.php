@@ -5,37 +5,6 @@ require_once(__DIR__.'/../classes/Database.php');//mostly for DB connections... 
 //initialize classes
 if(!isset($database)){$database = new Database();}//initialize database - why not....
 ?>
-<style>
-    /**
-    Inline styles here
-    **/
-    .mb-0{
-        margin-bottom: 0px;/** example **/
-    }
-    #example-id{
-        
-    }
-
-    .upload-btn {
-        background-color: #4CAF50;
-        border: none;
-        color: white;
-        padding: 16px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .upload-btn:hover {
-        background-color: #3e8e41;
-    }
-
-</style>
 
 <section id="join" class="bg-grey">
     <div class="container-fluid" data-aos="fade-up">
@@ -56,7 +25,7 @@ if(!isset($database)){$database = new Database();}//initialize database - why no
                             <label for="name" class="text-black label-top">Name</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="tel" class="form-control" id ="phone" placeholder="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="tel">
+                            <input type="tel" class="form-control" id ="phone" placeholder="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="tel" required>
                             <label for="tel" class="text-black label-top">Phone #</label>
                         </div>
                         <div class="form-floating mb-4">
@@ -68,7 +37,7 @@ if(!isset($database)){$database = new Database();}//initialize database - why no
                             <label for="socialmediainfo" class="text-black label-top">Socials</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="text" class="form-control" id ="experience" pattern="[0-9]{2}" placeholder="experience" autocomplete="experience">
+                            <input type="text" class="form-control" id ="experience" pattern="[0-9]" placeholder="experience" autocomplete="experience">
                             <label for="experience" class="text-black label-top"># of Years Experience</label>
                         </div>
                         <div class="form-floating mb-4">
@@ -77,11 +46,11 @@ if(!isset($database)){$database = new Database();}//initialize database - why no
                             </p>
                         </div>
                         <div>
-                            <input type="radio" name="yes" id ="yesCheck" >
+                            <input type="checkbox" name="yes" id ="yesCheck" >
                             <label for="yesCheck" class="text-black">Yes</label>
                         </div>
                         <div>
-                            <input type="radio" name="no" id ="noCheck" >
+                            <input type="checkbox" name="no" id ="noCheck" checked='checked'>
                             <label for="noCheck" class="text-black">No</label>
                         </div>
                         <div class="form-floating mb-4">
@@ -91,6 +60,7 @@ if(!isset($database)){$database = new Database();}//initialize database - why no
                         <div class="form-floating mb-4">
                             <button id="joinBtn" class="btn btn-outline text-black">Submit</button>
                         </div>
+                        <div id='result'></div>
                     </form>
                     
                 </div>
@@ -99,7 +69,41 @@ if(!isset($database)){$database = new Database();}//initialize database - why no
     </div>
 </section>
 
-<form action="upload.php" method="post" enctype="multipart/form-data">
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input class="upload-btn" type="submit" value="Upload Image" name="submit">
-</form>
+
+<div class="user-photos">
+    <!-- Photo Gallery -->
+    <h2 class="gallery-header"><br>Explore the Trails Through Our Members' Captivating Photos!</h2>
+    <div id="photo-gallery">
+        <?php
+        $directory = $_SERVER['DOCUMENT_ROOT'] . "/img/"; // Directory containing the images, absolute path
+        $pattern = '/^userphoto\d+\.jpg$/i'; // Regular expression pattern to match the file names
+
+        if (is_dir($directory)) {
+            $files = scandir($directory);
+
+            foreach ($files as $file) {
+                if (preg_match($pattern, $file)) {
+                    // Display the image
+                    echo "<img src='/img/{$file}' alt='User uploaded photo' style='width:200px; height:auto; margin:10px;' />";
+                }
+            }
+        } else {
+            echo "<p>Unable to read the image directory.</p>";
+        }
+        ?>
+    </div>
+
+    <h2 class="gallery-header">Have photos you would like to share? Upload them here!<br></h2>
+    <form action="../workers/upload.php" method="post" enctype="multipart/form-data">
+    <div class="upload-container">
+      <label for="fileToUpload" class="file-input-label">Choose file</label>
+      <input type="file" name="fileToUpload" id="fileToUpload" class="file-input">
+      <input class="upload-btn" type="submit" value="Upload Image" name="submit">
+    </div>
+  </form>
+</div>
+
+
+
+
+
